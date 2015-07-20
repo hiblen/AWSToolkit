@@ -11,7 +11,7 @@ namespace AwsLibs
         private IAmazonEC2 _client;
         public AwsFacade()
         {
-            _client = AWSClientFactory.CreateAmazonEC2Client();
+             _client = AWSClientFactory.CreateAmazonEC2Client();
         }
 
         public List<Instance> GetInstances()

@@ -1,6 +1,6 @@
 ﻿namespace AwsTools
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -37,14 +37,21 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lblAccount = new System.Windows.Forms.Label();
+            this.btnConfigure = new System.Windows.Forms.Button();
+            this.txtZonomiApiKey = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblIpAddress = new System.Windows.Forms.Label();
+            this.lblMyPublicIp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cboInstances
             // 
+            this.cboInstances.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboInstances.FormattingEnabled = true;
-            this.cboInstances.Location = new System.Drawing.Point(116, 46);
+            this.cboInstances.Location = new System.Drawing.Point(118, 126);
             this.cboInstances.Name = "cboInstances";
-            this.cboInstances.Size = new System.Drawing.Size(182, 21);
+            this.cboInstances.Size = new System.Drawing.Size(312, 21);
             this.cboInstances.TabIndex = 0;
             this.cboInstances.SelectedIndexChanged += new System.EventHandler(this.cboInstances_SelectedIndexChanged);
             // 
@@ -61,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 49);
+            this.label2.Location = new System.Drawing.Point(30, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 2;
@@ -71,7 +78,7 @@
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(28, 84);
+            this.lblState.Location = new System.Drawing.Point(30, 164);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(55, 13);
             this.lblState.TabIndex = 3;
@@ -81,7 +88,7 @@
             // lblDns
             // 
             this.lblDns.AutoSize = true;
-            this.lblDns.Location = new System.Drawing.Point(28, 111);
+            this.lblDns.Location = new System.Drawing.Point(30, 191);
             this.lblDns.Name = "lblDns";
             this.lblDns.Size = new System.Drawing.Size(85, 13);
             this.lblDns.TabIndex = 4;
@@ -90,7 +97,8 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(31, 140);
+            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnStart.Location = new System.Drawing.Point(25, 279);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 5;
@@ -100,7 +108,8 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(116, 140);
+            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnStop.Location = new System.Drawing.Point(110, 279);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 6;
@@ -110,7 +119,8 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(304, 44);
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(436, 124);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 7;
@@ -128,11 +138,67 @@
             this.lblAccount.Tag = "Account : {0}";
             this.lblAccount.Text = "Account : {0}";
             // 
-            // Form1
+            // btnConfigure
+            // 
+            this.btnConfigure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnConfigure.Location = new System.Drawing.Point(191, 279);
+            this.btnConfigure.Name = "btnConfigure";
+            this.btnConfigure.Size = new System.Drawing.Size(75, 23);
+            this.btnConfigure.TabIndex = 9;
+            this.btnConfigure.Text = "Configure";
+            this.btnConfigure.UseVisualStyleBackColor = true;
+            this.btnConfigure.Click += new System.EventHandler(this.btnConfigure_Click);
+            // 
+            // txtZonomiApiKey
+            // 
+            this.txtZonomiApiKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtZonomiApiKey.Location = new System.Drawing.Point(118, 56);
+            this.txtZonomiApiKey.Name = "txtZonomiApiKey";
+            this.txtZonomiApiKey.Size = new System.Drawing.Size(312, 20);
+            this.txtZonomiApiKey.TabIndex = 10;
+            this.txtZonomiApiKey.TextChanged += new System.EventHandler(this.txtZonomiApiKey_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Tag = "";
+            this.label1.Text = "Dns Key";
+            // 
+            // lblIpAddress
+            // 
+            this.lblIpAddress.AutoSize = true;
+            this.lblIpAddress.Location = new System.Drawing.Point(30, 215);
+            this.lblIpAddress.Name = "lblIpAddress";
+            this.lblIpAddress.Size = new System.Drawing.Size(72, 13);
+            this.lblIpAddress.TabIndex = 12;
+            this.lblIpAddress.Tag = "Public IP : {0}";
+            this.lblIpAddress.Text = "Public IP : {0}";
+            // 
+            // lblMyPublicIp
+            // 
+            this.lblMyPublicIp.AutoSize = true;
+            this.lblMyPublicIp.Location = new System.Drawing.Point(12, 31);
+            this.lblMyPublicIp.Name = "lblMyPublicIp";
+            this.lblMyPublicIp.Size = new System.Drawing.Size(88, 13);
+            this.lblMyPublicIp.TabIndex = 13;
+            this.lblMyPublicIp.Tag = "My Public Ip : {0}";
+            this.lblMyPublicIp.Text = "My Public Ip : {0}";
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 346);
+            this.ClientSize = new System.Drawing.Size(529, 326);
+            this.Controls.Add(this.lblMyPublicIp);
+            this.Controls.Add(this.lblIpAddress);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtZonomiApiKey);
+            this.Controls.Add(this.btnConfigure);
             this.Controls.Add(this.lblAccount);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnStop);
@@ -142,8 +208,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRegion);
             this.Controls.Add(this.cboInstances);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmMain";
+            this.Text = "Aws Tools";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,6 +227,11 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblAccount;
+        private System.Windows.Forms.Button btnConfigure;
+        private System.Windows.Forms.TextBox txtZonomiApiKey;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIpAddress;
+        private System.Windows.Forms.Label lblMyPublicIp;
 
     }
 }
