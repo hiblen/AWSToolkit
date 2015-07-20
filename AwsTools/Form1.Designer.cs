@@ -42,6 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblIpAddress = new System.Windows.Forms.Label();
             this.lblMyPublicIp = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDomain = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cboInstances
@@ -157,7 +159,7 @@
             this.txtZonomiApiKey.Name = "txtZonomiApiKey";
             this.txtZonomiApiKey.Size = new System.Drawing.Size(312, 20);
             this.txtZonomiApiKey.TabIndex = 10;
-            this.txtZonomiApiKey.TextChanged += new System.EventHandler(this.txtZonomiApiKey_TextChanged);
+            this.txtZonomiApiKey.Leave += new System.EventHandler(this.Setting_Changed);
             // 
             // label1
             // 
@@ -189,11 +191,33 @@
             this.lblMyPublicIp.Tag = "My Public Ip : {0}";
             this.lblMyPublicIp.Text = "My Public Ip : {0}";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Tag = "";
+            this.label3.Text = "Domain";
+            // 
+            // txtDomain
+            // 
+            this.txtDomain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDomain.Location = new System.Drawing.Point(118, 82);
+            this.txtDomain.Name = "txtDomain";
+            this.txtDomain.Size = new System.Drawing.Size(312, 20);
+            this.txtDomain.TabIndex = 14;
+            this.txtDomain.Leave += new System.EventHandler(this.Setting_Changed);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 326);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtDomain);
             this.Controls.Add(this.lblMyPublicIp);
             this.Controls.Add(this.lblIpAddress);
             this.Controls.Add(this.label1);
@@ -232,6 +256,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblIpAddress;
         private System.Windows.Forms.Label lblMyPublicIp;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDomain;
 
     }
 }

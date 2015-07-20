@@ -25,13 +25,25 @@ namespace AwsTools {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("{ENTER KEY}")]
         public string ZonomiApiKey {
             get {
                 return ((string)(this["ZonomiApiKey"]));
             }
             set {
                 this["ZonomiApiKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Example.com")]
+        public string DomainName {
+            get {
+                return ((string)(this["DomainName"]));
+            }
+            set {
+                this["DomainName"] = value;
             }
         }
     }

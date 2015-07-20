@@ -20,6 +20,7 @@ namespace AwsTools
             lblRegion.Text = string.Format(lblRegion.Tag.ToString(), ConfigurationManager.AppSettings["AWSRegion"]);
             lblAccount.Text = string.Format(lblAccount.Tag.ToString(), ConfigurationManager.AppSettings["AWSProfileName"]);
             txtZonomiApiKey.Text = ToolkitSettings.Default.ZonomiApiKey;
+            txtDomain.Text = ToolkitSettings.Default.DomainName;
             lblMyPublicIp.Text = string.Format(lblMyPublicIp.Tag.ToString(), GetPublicIP());
         }
 
@@ -68,8 +69,10 @@ namespace AwsTools
 
         private void btnConfigure_Click(object sender, EventArgs e)
         {
+            var instance = GetSelectedInstance();
+            var domain = string.Format("{0}.{1}", cboInstances.SelectedItem.ToString().Replace(" ", string.Empty), ToolkitSettings.Default.DomainName);
             var urlToUpdate = string.Format("https://zonomi.com/app/dns/dyndns.jsp?api_key={0}&host={1}&value={2}",
-                ToolkitSettings.Default.ZonomiApiKey, "dev.elettingtest.com", GetSelectedInstance().PublicIpAddress);
+                ToolkitSettings.Default.ZonomiApiKey, domain, instance.PublicIpAddress);
 
             var request = (HttpWebRequest)WebRequest.Create(urlToUpdate);
             var response=(HttpWebResponse)request.GetResponse();
@@ -77,11 +80,14 @@ namespace AwsTools
 
             if(response.StatusCode!=HttpStatusCode.OK)
                 throw new Exception("Dns Update failed");
+
+            MessageBox.Show(string.Format("DNS Updated for : {0}", domain));
         }
 
-        private void txtZonomiApiKey_TextChanged(object sender, EventArgs e)
+        private void Setting_Changed(object sender, EventArgs e)
         {
             ToolkitSettings.Default.ZonomiApiKey = txtZonomiApiKey.Text;
+            ToolkitSettings.Default.DomainName = txtDomain.Text;
             ToolkitSettings.Default.Save();
         }
 

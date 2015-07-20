@@ -3,7 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ZonomiApiKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">{ENTER KEY}</Value>
+    </Setting>
+    <Setting Name="DomainName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Example.com</Value>
     </Setting>
   </Settings>
 </SettingsFile>
